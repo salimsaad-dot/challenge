@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      href="resources/favicon.ico"
+      type="image/x-icon"
+      sizes="96x96"
+    />
+
+    <title>Device Shop Checkout | devChallenges.io</title>
+
+    <!--You are welcome to delete these styles or modify them in your own stylesheet -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+      }
+
+      .author-info {
+        font-size: 14px;
+        text-align: center;
+        margin-top: 16px;
+        color: rgb(55, 65, 81);
+      }
+
+      .author-info a {
+        text-decoration: none;
+      }
+
+
+      header{
+        background-image: url(resources/background-image.png);
+        display: flex;
+        justify-content: center;
+        padding-top: 30px;
+        padding-bottom: 120px;
+        position: relative;
+      }
+
+      .header-text{
+      color: white;
+      margin-right: 17px;
+      font-weight: bold;
+      }
+
+      .header-button{
+        border: none;
+        border-radius: 10px;
+        font-size: 10px;
+        width: 70px;
+        background-color: black;
+        color: white;
+      }
+
+
+      .header-absolute{
+        position: absolute;
+        background-color: white;
+        top: 70px;
+        bottom: -200px;
+        left: 20px;
+        right: 20px;
+        display: flex;
+        height: 500px;
+      }
+
+      .sales{
+        background-color: rgb(234, 233, 233);
+        padding: 20px;
+        flex: 1;
+      }
+      .sales-items{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+
+      .sales-left{
+        display: flex;
+        gap: 20px;
+      }
+
+      .left-image-container{
+        background-color: white;
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
+      }
+
+      .left-image{
+       margin-left: 30px;
+       margin-top: 10px;
+      }
+
+      .left-image-watch{
+        width: 40px;
+        margin-left: 30px;
+        margin-top: 14px;
+      }
+
+      .left-image-mac{
+        width: 80px;
+        margin-left: 10px;
+        margin-top: 15px;
+      }
+
+      
+
+      .left-text-one,
+      .left-text-two,
+      .left-text-three{
+        font-size: 13px;
+      }
+
+      .left-text-one{
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+
+      .left-text-two{
+        margin-bottom: 40px;
+      }
+
+      .right-text-one{
+        font-size: 13px;
+        font-weight: bold;
+        margin-bottom: 60px;
+      }
+
+      .right-text-two{
+        padding-left: 40px;
+      }
+
+      .coupon{
+        margin-bottom: 10px;
+      }
+
+      .left-input{
+        width: 430px;
+        height: 40px;
+        border: none;
+        border-radius: 10px;
+      
+      }
+
+      .left-input::placeholder{
+       padding-left: 20px;
+      }
+
+      .left-button{
+        background-color: black;
+        border: none;
+        height: 40px;
+        color: white;
+        width: 100px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .sub-total{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+
+      .form{
+       
+        color: black;
+        padding: 20px;
+        flex: 1;
+      }
+
+      .info{
+        margin-bottom: 40px;
+      }
+
+      .name{
+        margin-bottom: 5px;
+      }
+
+      .right-first-input{
+        height: 40px;
+        width: 600px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgb(226, 226, 226);
+        margin-bottom: 20px;
+      }
+
+      .right-first-input::placeholder{
+        padding-left: 25px;
+        color: black;
+      }
+
+      .right-second-input{
+        height: 40px;
+        width: 600px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgb(226, 226, 226);
+        margin-bottom: 25px;
+      }
+
+      .right-second-input::placeholder{
+        padding-left: 20px;
+        color: black;
+      }
+
+      .post-container{
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .post-text{
+        margin-bottom: 5px;
+      }
+
+      .post-input{
+        width: 290px;
+        height: 40px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgb(226, 226, 226);
+        margin-bottom: 40px;
+      }
+
+      .post-input::placeholder{
+        padding-left: 20px;
+        color: black;
+      }
+
+      .right-button{
+        height: 40px;
+        width: 600px;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        background-color: black;
+      }
+      
+
+    
+    </style>
+  </head>
+  <body>
+   
+
+    <div class="author-info">
+      Coded by <a href="#">Amuzuloh Salim Saad</a> | Challenge by
+      <a href="https://www.devchallenges.io?ref=challenge" target="_blank"
+        >devChallenges.io</a
+      >.
+    </div>
+
+    <header>
+      <p class="header-text">Checkout</p><button class="header-button">3 ITEMS</button>
+
+      <div class="header-absolute">
+        <div class="sales">
+          <div class="sales-items">
+            <div class="sales-left">
+              <div class="left-image-container"><img class="left-image" src="resources/Gold.png" alt=""></div>
+              <div>
+                <p class="left-text-one">iPhone 12 Pro</p>
+                <p class="left-text-two"> Golden</p>
+                <p class="left-text-three"> x 1</p>
+              </div>
+            </div>
+            <div>
+              <p class="right-text-one">$999.00</p>
+              <p class="right-text-two">x</p>
+            </div>
+          </div>
+          <div class="sales-items">
+            <div class="sales-left">
+              <div class="left-image-container"><img class="left-image-watch" src="resources/Apple-watch.png" alt=""></div>
+              <div>
+                <p class="left-text-one"> Apple Watch</p>
+                <p class="left-text-two"> Blue</p>
+                <p class="left-text-three"> x 1</p>
+              </div>
+            </div>
+            <div>
+              <p class="right-text-one">$399.00</p>
+              <p class="right-text-two">x</p>
+            </div>
+          </div>
+          <div class="sales-items">
+            <div class="sales-left">
+              <div class="left-image-container"><img class="left-image-mac" src="resources/iMac.png" alt=""></div>
+              <div>
+                <p class="left-text-one">iMac</p>
+                <p class="left-text-two"> Green</p>
+                <p class="left-text-three"> x 1</p>
+              </div>
+            </div>
+            <div>
+              <p class="right-text-one">$1199.00</p>
+              <p class="right-text-two">x</p>
+            </div>
+          </div>
+
+          <div class="coupon">
+            <input class="left-input" type="text" placeholder="Enter coupon code">
+            <button class="left-button">Apply coupon</button>
+          </div>
+
+          <div class="sub-total"><p>Subtotal</p><p>$2597.00</p></div>
+          <div class="sub-total"><p>Tax</p><p>$623.28</p></div>
+          <div class="sub-total"><p>Total</p><p>$3220.28</p></div>
+        </div>
+        
+
+        <div class="form">
+          <p class="info">contact information</p>
+          <p class="name">first & last name</p>
+          <input class="right-first-input" type="text" placeholder="Enter first & last name">
+          <p>Email Address</p>
+          <input class="right-second-input" type="text" placeholder="Enter Email Address">
+          <div class="post-container">
+          <div>
+            <p class="post-text">country</p>
+            <input class="post-input" type="text" placeholder="finland">
+          </div>
+          <div>
+            <p class="post-text">postal code</p>
+            <input class="post-input" type="number" placeholder="06478">
+          </div>
+          </div>
+          <button class="right-button">continue</button>
+        </div>
+      </div>
+    </header>
+
+    
+</html>
+
+
+ <!--     
+    Checkout
+    
+    3 items
+    
+    iPhone 12 Pro
+    
+    Golden
+    
+    $999.00
+    
+    x 1
+    
+    Apple Watch
+    
+    Blue
+    
+    $399.00
+    
+    iMac
+    
+    Green
+    
+    $1199.00
+    
+    Enter coupon code
+    
+    Apply Coupon
+    
+    Sub total
+    
+    $2597.00
+    
+    Tax
+    
+    $623.28
+    
+    Total
+    
+    $3220.28
+    
+    Contact Information
+    
+    First & Last name
+    
+    Enter first & last name
+    
+    Email Address
+    
+    Enter email address
+    
+    Country
+    
+    Finland
+    
+    Postal Code
+    
+    00270
+    
+    Continue
+     -->
